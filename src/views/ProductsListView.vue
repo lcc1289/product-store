@@ -1,10 +1,11 @@
 <script setup>
-  import { computed } from 'vue'
+  import { computed, reactive, ReactiveEffect } from 'vue'
   import { useStore } from 'vuex'
 
   const store = useStore()
 
   let selectedProducts = computed( () => store.getters["products/getSelectedProducts"])
+  let getSelectedProductsTotalPrice = computed( () => store.getters["products/getSelectedProductsTotalPrice"])
 </script>
 
 <template>
@@ -28,6 +29,7 @@
               <th scope="col">Nombre</th>
               <th scope="col">Precio</th>
               <th scope="col">Cantidad</th>
+              <th scope="col">Monto</th>
               <th scope="col">Accion</th>
             </tr>
           </thead>
@@ -36,16 +38,15 @@
               <td class="align-middle"><img :src="product.image" class="top-bar-logo img-circle elevation-2 list-size" :alt="product.name"></td>
               <td class="align-middle">{{product.title}}</td>
               <td class="align-middle">{{product.price}}</td>
-              <td class="align-middle"><input class="form-control w-25" type="number" value="1"></td>
+              <td class="align-middle"><input class="form-control w-25" type="number" v-model="product.amount" @change="store.commit('products/updateProductAmount', product)"></td>
+              <td class="align-middle">{{product.price * product.amount}}</td>
               <td class="align-middle"><button type="button" class="btn btn-sm btn-outline-secondary" @click="store.commit('products/removeProduct', product.id)">Eliminar</button></td>
             </tr>
           </tbody>
         </table>
       </div>
+      <p class="mt-3">Importe total: ${{getSelectedProductsTotalPrice}}</p>
         </div>
-        
-        
-        
       </div>
     </div>
   </div>
