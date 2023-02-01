@@ -1,35 +1,28 @@
 # product-store
 
-This template should help get you started developing with Vue 3 in Vite.
+Proyecto de estudio que simula una compra online, para ello usa el api fakestoreapi
 
-## Recommended IDE Setup
+## Elementos a mejorar
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+* Realizar completamente el proceso de compra utilizando el api
+* Parametrizar los iconos utilizados
+* Modificar la forma de empleo de los metodos/atributos del store Vuex. Utilizar los mapeos
+* Annadirle paginados a los listados de productos
+* Mientras dura la carga de las imagenes de los productos utilizar alguna imagen local
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+### Para Instalar las Dependencias
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Para Compilar e Iniciar el Servidor Local de Desarrollo
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Para compilar y Minificar para el servidor de Produccion
 
 ```sh
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
