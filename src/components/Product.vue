@@ -19,8 +19,8 @@ const store = useStore()
             <p class="card-text product-description-size">{{product.name}}</p>
             <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-                <button v-if="product.added" type="button" class="btn btn-sm btn-outline-secondary bg-success color-white">Annadido</button>
-                <button v-else type="button" class="btn btn-sm btn-outline-secondary bg-primary color-white" @click="store.commit('products/addToCart', product.id)">Annadir al carrito</button>
+                <button v-if="product.added" type="button" class="btn btn-sm btn-outline-secondary bg-success color-white">A&ntilde;adido</button>
+                <button v-else type="button" class="btn btn-sm btn-outline-secondary bg-primary color-white" @click="store.commit('products/addToCart', product.id)">A&ntilde;adir al carrito</button>
             </div>
             <small class="text-muted">{{product.price}}</small>
             </div>
