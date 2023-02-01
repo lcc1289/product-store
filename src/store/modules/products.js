@@ -18,6 +18,12 @@ export default ({
         product.added = false
       }
     },
+    updateProductAmount (state, productData) {
+      const product = state.products.find(item => item.id === productData.id)
+      if (product) {
+        product.amount = productData.amount
+      }
+    },
     updateProducts (state, products) {
       state.products.splice(0, state.products.length)
       products.forEach(product => {
@@ -48,6 +54,16 @@ export default ({
     getSelectedProducts (state) {
       return state.products.filter(item => item.added)
     },
+    getSelectedProductsTotalPrice (state) {
+      const initialValue = 0
+      let totalPrice = 0
+      state.products.forEach(product => {
+        if (product.added) {
+          totalPrice += product.price * product.amount
+        }
+      })
+      return totalPrice
+    },
     mapProductsFromServerToLocal: (state, getters) => (products) => {
       const mappedProducts = []
       products.forEach(product => {
@@ -64,7 +80,8 @@ export default ({
         description: product.description,
         rating:product.rating,
         image: product.image,
-        price: product.price
+        price: product.price,
+        amount: 1
       }
       return localProduct
     }
