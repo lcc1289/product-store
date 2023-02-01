@@ -18,7 +18,12 @@
           <Product :product="product"/>
         </div>
         <div v-if="products.length == 0" class="col-12">
-          <p class="error-loading text-center">Lo sentimos ha ocurrido un error, por favor llame al administrador</p>
+          <div class="d-flex justify-content-center">
+            <p class="text-size-loading text-center mx-3">En estos momentos se estan cargando los productos, por favor espere</p>
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -26,7 +31,7 @@
   </div>
 </template>
 <style scoped>
-.error-loading{
+.text-size-loading{
   font-size: 1.25rem;
 }
 </style>
