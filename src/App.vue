@@ -32,7 +32,7 @@ import { useStore } from 'vuex'
         <p>
           <RouterLink v-if="isOnHomeView && products.length > 0" :to="{name: 'ProductsSelected'}" class="btn btn-primary my-2">Ver productos seleccionados</RouterLink>
           <RouterLink v-if="!isOnHomeView" :to="{name: 'Home'}" class="btn btn-secondary my-2 color-white">Regresar a la pagina principal</RouterLink>
-          <span v-if="!isOnHomeView" class="btn btn-secondary mx-1 my-2"><IconCart/><span class=" mx-1 badge bg-danger">{{selectedProducts}}</span></span>
+          <span v-if="isOnHomeView && products.length > 0" class="btn btn-secondary mx-1 my-2"><IconCart/><span class=" mx-1 badge bg-danger">{{selectedProducts}}</span></span>
           
         </p>
       </div>
