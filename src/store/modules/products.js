@@ -16,7 +16,16 @@ export default ({
       const product = state.products.find(item => item.id === idProduct)
       if (product) {
         product.added = false
+        product.amount = 1
       }
+    },
+    removeAllSelectedProduct (state) {
+      state.products.forEach(product => {
+        if (product.added) {
+          product.added = false
+          product.amount = 1
+        }
+      })
     },
     updateProductAmount (state, productData) {
       const product = state.products.find(item => item.id === productData.id)
