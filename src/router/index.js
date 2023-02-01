@@ -13,6 +13,11 @@ const router = createRouter({
       path: '/products/selected',
       name: 'ProductsSelected',
       component: () => import('../views/ProductsListView.vue')
+    },
+    {
+      path: '/products/buyed',
+      name: 'Voucher',
+      component: () => import('../views/VoucherView.vue')
     }
   ]
 })
