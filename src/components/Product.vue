@@ -2,20 +2,8 @@
 import { useStore } from 'vuex'
 
 defineProps({
-  id: {
-    type: Number
-  },
-  name: {
-    type: String
-  },
-  price: {
-    type: Number
-  },
-  added: {
-    type: Boolean
-  },
-  image: {
-    type: String
+  product: {
+    type: Object
   }
 })
 
@@ -25,16 +13,16 @@ const store = useStore()
 
 <template>
   <div class="card shadow-sm">
-        <img :src="image" class="top-bar-logo img-circle elevation-2 preview-size" :alt="name">
+        <img :src="product.image" class="top-bar-logo img-circle elevation-2 preview-size" :alt="product.name">
 
         <div class="card-body">
-            <p class="card-text product-description-size">{{name}}</p>
+            <p class="card-text product-description-size">{{product.name}}</p>
             <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-                <button v-if="added" type="button" class="btn btn-sm btn-outline-secondary bg-success color-white">Annadido</button>
-                <button v-else type="button" class="btn btn-sm btn-outline-secondary bg-primary color-white" @click="store.commit('products/addToCart', id)">Annadir al carrito</button>
+                <button v-if="product.added" type="button" class="btn btn-sm btn-outline-secondary bg-success color-white">Annadido</button>
+                <button v-else type="button" class="btn btn-sm btn-outline-secondary bg-primary color-white" @click="store.commit('products/addToCart', product.id)">Annadir al carrito</button>
             </div>
-            <small class="text-muted">{{price}}</small>
+            <small class="text-muted">{{product.price}}</small>
             </div>
         </div>
         </div>

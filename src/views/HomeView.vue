@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div v-for="product of products" :key="product.id" class="col">
-          <Product :name="product.title" :price="product.price" :added="product.added" :id="product.id" :image="product.image"/>
+          <Product :product="product"/>
         </div>
         <div v-if="products.length == 0" class="col-12">
           <p class="error-loading text-center">Lo sentimos ha ocurrido un error, por favor llame al administrador</p>

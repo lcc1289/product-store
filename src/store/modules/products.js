@@ -63,7 +63,8 @@ export default ({
         added: false,
         description: product.description,
         rating:product.rating,
-        image: product.image
+        image: product.image,
+        price: product.price
       }
       return localProduct
     }
