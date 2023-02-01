@@ -45,7 +45,7 @@
           </tbody>
         </table>
       </div>
-      <p class="mt-3">Importe total: ${{getSelectedProductsTotalPrice}}</p>
+      <p v-if="selectedProducts.length > 0" class="mt-3">Importe total: ${{getSelectedProductsTotalPrice}}</p>
         </div>
       </div>
     </div>
