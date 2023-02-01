@@ -9,7 +9,7 @@ Home
 
 Products
 
-![Products](https://drive.google.com/file/d/1JW-LhqkAi0dyLTOZSXa6XnqI3Z7v2k2n)
+![Products](https://drive.google.com/uc?export=view&id=1JW-LhqkAi0dyLTOZSXa6XnqI3Z7v2k2n)
 
 ## Elementos a mejorar
 
