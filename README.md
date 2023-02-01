@@ -4,7 +4,7 @@ Proyecto de estudio que simula una compra online, para ello usa el api fakestore
 
 Home
 
-![HomePage](https://drive.google.com/file/d/1tingP_-HhGGcTpKAJGUwDuaS9iVqyEIm/view)
+![HomePage](https://drive.google.com/uc?export=view&id=1tingP_-HhGGcTpKAJGUwDuaS9iVqyEIm)
 
 
 Products
