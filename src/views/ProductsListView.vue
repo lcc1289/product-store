@@ -1,11 +1,18 @@
 <script setup>
   import { computed, reactive, ReactiveEffect } from 'vue'
+  import { useRouter } from 'vue-router'
   import { useStore } from 'vuex'
 
   const store = useStore()
 
+  const router = useRouter()
+
   let selectedProducts = computed( () => store.getters["products/getSelectedProducts"])
   let getSelectedProductsTotalPrice = computed( () => store.getters["products/getSelectedProductsTotalPrice"])
+
+  function toBuy() {
+    router.push({name: 'Voucher'})
+  }
 </script>
 
 <template>
@@ -18,7 +25,7 @@
 
         <span class="d-flex justify-content-between mb-5">
           <h2>Productos a comprar</h2>
-          <button v-if="selectedProducts.length > 0" type="button" class="btn btn-sm btn-outline-secondary ">Realizar la compra</button>
+          <button v-if="selectedProducts.length > 0" type="button" class="btn btn-sm btn-outline-secondary" @click="toBuy">Realizar la compra</button>
         </span>
       <p v-if="selectedProducts.length == 0">No existen productos para mostrar.</p>
       <div v-else class="table-responsive">
